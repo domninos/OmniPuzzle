@@ -11,8 +11,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class PuzzlePlugin extends JavaPlugin {
 
-    // TODO error messages
-
     private PuzzleConfig messages;
     private PuzzleConfig players;
 
@@ -41,7 +39,6 @@ public class PuzzlePlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
         puzzleHandler.flush();
 
         sendConsole("&aSuccessfully disabled OmniPuzzle");
@@ -52,7 +49,8 @@ public class PuzzlePlugin extends JavaPlugin {
     }
 
     public void sendMessage(CommandSender sender, String message) {
-        sender.sendMessage(translate(getMessagesUtil().getPrefix() + " " + message));
+        sender.sendMessage(translate((getMessagesUtil().getPrefix() == null ?
+                "&7[&3Puzzle&7]" : getMessagesUtil().getPrefix()) + " " + message));
     }
 
     public String translate(String text) {

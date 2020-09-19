@@ -6,3 +6,5 @@
 .idea/uiDesigner.xml
 OmniPuzzle.iml
 .idea/vcs.xml
+.idea/artifacts/
+out/

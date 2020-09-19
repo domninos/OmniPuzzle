@@ -22,9 +22,11 @@ public class PuzzleHandler {
         ConfigurationSection section = plugin.getConfig().getConfigurationSection("locations");
 
         if (section == null) {
-            plugin.sendConsole("&cNo ;ocations found.");
+            plugin.sendConsole("&cNo locations found.");
             return;
         }
+
+        flush();
 
         for (String key : section.getKeys(false)) {
             if (key == null)

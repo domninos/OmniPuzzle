@@ -19,7 +19,7 @@ public class PuzzleConfig {
 
         if (!(file.exists())) {
             plugin.saveResource(fileName, false);
-            plugin.sendConsole("&aSuccessfully created " + fileName);
+            System.out.println("Created " + fileName);
         }
 
         reload();

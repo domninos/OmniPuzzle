@@ -21,6 +21,7 @@ public class ExitSubCommand extends SubCommand {
         PuzzleLevel level = plugin.getPuzzleHandler().getLevel(player);
 
         if (level == null) {
+            plugin.sendMessage(sender, "&c" + player.getName() + " has not yet begun their journey.");
             plugin.sendMessage(player, plugin.getMessagesUtil().getErrorExit());
             return true;
         }
