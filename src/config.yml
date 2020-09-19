@@ -1,0 +1,8 @@
+locations:
+  1:
+    world: world
+    x: 100
+    y: 50
+    z: 100
+    yaw: -123.3
+    pitch: 233.1
