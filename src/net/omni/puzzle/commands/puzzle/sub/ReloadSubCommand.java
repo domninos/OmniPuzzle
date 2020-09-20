@@ -20,6 +20,8 @@ public class ReloadSubCommand extends SubCommand {
         plugin.reloadConfig();
         plugin.getPuzzleHandler().load();
 
+        plugin.getPlayers().reload();
+
         plugin.sendMessage(sender, "&aSuccessfully reloaded plugin files.");
         return true;
     }
