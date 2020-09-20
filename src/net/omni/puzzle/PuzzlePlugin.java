@@ -2,6 +2,7 @@ package net.omni.puzzle;
 
 import net.omni.puzzle.commands.puzzle.PuzzleCommand;
 import net.omni.puzzle.config.PuzzleConfig;
+import net.omni.puzzle.placeholder.PuzzlePlaceholder;
 import net.omni.puzzle.puzzles.PuzzleHandler;
 import net.omni.puzzle.util.MessagesUtil;
 import org.bukkit.Bukkit;
@@ -33,6 +34,11 @@ public class PuzzlePlugin extends JavaPlugin {
         puzzleHandler.load();
 
         new PuzzleCommand(this).register();
+
+        if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            new PuzzlePlaceholder(this).register();
+            sendConsole("&aPlaceholderAPI found, registered placeholder.");
+        }
 
         sendConsole("&aSuccessfully enabled OmniPuzzle v-" + getDescription().getVersion());
     }
