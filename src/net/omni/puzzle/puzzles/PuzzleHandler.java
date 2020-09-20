@@ -106,10 +106,8 @@ public class PuzzleHandler {
 
         int level = plugin.getPlayers().getInt("players." + player.getName());
 
-        if (level <= 0) {
-            plugin.sendConsole("&cLevel not found for " + player.getName());
+        if (level <= 0)
             return null;
-        }
 
         return getLevel(level);
     }
