@@ -32,14 +32,6 @@ public class CheckpointSubCommand extends SubCommand {
             return true;
         }
 
-        PuzzleLevel previousLevel = plugin.getPuzzleHandler().getLevel(player);
-
-        if (previousLevel == null) {
-            plugin.sendMessage(player, "&cSomething went wrong loading levels. (Error code: 0)");
-            plugin.sendMessage(sender, "&cPrevious level of " + player.getName() + " not found.");
-            plugin.sendConsole("&cPrevious level of " + player.getName() + " not found. (Error code: 0)");
-            return true;
-        }
 
         PuzzleLevel puzzle = plugin.getPuzzleHandler().getLevel(level);
 
@@ -50,11 +42,15 @@ public class CheckpointSubCommand extends SubCommand {
             return true;
         }
 
-        // if given level is greater than previous level
-        if (level <= previousLevel.getLevel()) {
-            plugin.sendMessage(player, plugin.getMessagesUtil().getErrorCheckpoint());
-            plugin.sendMessage(sender, "&c" + player.getName() + " already completed this level.");
-            return true;
+        PuzzleLevel previousLevel = plugin.getPuzzleHandler().getLevel(player);
+
+        if (previousLevel != null) {
+            // if given level is greater than previous level
+            if (level <= previousLevel.getLevel()) {
+                plugin.sendMessage(player, plugin.getMessagesUtil().getErrorCheckpoint());
+                plugin.sendMessage(sender, "&c" + player.getName() + " already completed this level.");
+                return true;
+            }
         }
 
         plugin.getPlayers().set("players." + player.getName(), level);
