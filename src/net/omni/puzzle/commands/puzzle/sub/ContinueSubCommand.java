@@ -49,6 +49,6 @@ public class ContinueSubCommand extends SubCommand {
 
     @Override
     public String getPermission() {
-        return "puzzlegame.continue";
+        return "puzzlegame.admin";
     }
 }

@@ -38,6 +38,6 @@ public class ReloadSubCommand extends SubCommand {
 
     @Override
     public String getPermission() {
-        return "puzzle.reload";
+        return "puzzle.admin";
     }
 }

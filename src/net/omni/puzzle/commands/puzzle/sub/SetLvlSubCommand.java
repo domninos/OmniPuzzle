@@ -43,6 +43,6 @@ public class SetLvlSubCommand extends SubCommand {
 
     @Override
     public String getPermission() {
-        return "puzzlegame.setlvl";
+        return "puzzlegame.admin";
     }
 }

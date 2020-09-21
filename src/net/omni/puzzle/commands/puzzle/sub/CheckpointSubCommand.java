@@ -70,6 +70,6 @@ public class CheckpointSubCommand extends SubCommand {
 
     @Override
     public String getPermission() {
-        return "puzzlegame.checkpoint";
+        return "puzzlegame.admin";
     }
 }
